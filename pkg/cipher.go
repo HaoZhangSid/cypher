@@ -42,7 +42,8 @@ func shiftRune(input string, shift int) string {
 			if isUpperCase(r) {
 				base = 'A'
 			}
-			result.WriteRune(base + (r-base+rune(shift)+26)%26)
+			shifted := (r-base+rune(shift)+52)%26 + base
+			result.WriteRune(shifted)
 		} else {
 			result.WriteRune(r)
 		}
